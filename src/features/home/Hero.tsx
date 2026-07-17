@@ -73,7 +73,7 @@ export function Hero() {
             className="mt-10 flex flex-wrap justify-center gap-4 lg:justify-start"
           >
             <a
-              href="#projets"
+              href="/projets"
               className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-white transition-transform hover:scale-[1.03]"
             >
               Voir mes projets
