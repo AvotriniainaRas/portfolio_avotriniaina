@@ -41,7 +41,7 @@ export function HeroBackground() {
           translateX: '-50%',
           translateY: '-50%',
           background:
-            'radial-gradient(circle, rgba(245,158,11,0.18) 0%, rgba(245,158,11,0.06) 40%, transparent 70%)',
+            'radial-gradient(circle, rgba(37,99,235,0.16) 0%, rgba(37,99,235,0.05) 40%, transparent 70%)',
         }}
       />
 
