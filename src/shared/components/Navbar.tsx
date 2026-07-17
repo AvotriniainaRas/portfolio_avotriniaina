@@ -22,7 +22,7 @@ export function Navbar() {
     >
       <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
         <NavLink to="/" className="text-lg font-semibold tracking-tight">
-          Avotriniaina<span className="text-amber-500">.</span>
+          Avotriniaina<span className="text-primary"> Ras</span>
         </NavLink>
 
         <ul className="hidden items-center gap-8 text-sm font-medium sm:flex">
@@ -31,8 +31,8 @@ export function Navbar() {
               <NavLink
                 to={link.to}
                 className={({ isActive }) =>
-                  `transition-colors hover:text-amber-500 ${
-                    isActive ? 'text-amber-500' : 'text-gray-600 dark:text-gray-300'
+                  `transition-colors hover:text-primary ${
+                    isActive ? 'text-primary' : 'text-gray-600 dark:text-gray-300'
                   }`
                 }
               >
