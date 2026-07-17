@@ -3,6 +3,7 @@ import { RootLayout } from './RootLayout'
 import { HomePage } from '../features/home/HomePage'
 import { ProjectsPage } from '../features/projects/ProjectsPage'
 import { ProjectDetailPage } from '../features/projects/ProjectDetailPage'
+import { AboutPage } from '../features/about/AboutPage'
 
 export const router = createBrowserRouter([
   {
@@ -12,6 +13,7 @@ export const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: 'projets', element: <ProjectsPage /> },
       { path: 'projets/:slug', element: <ProjectDetailPage /> },
+      { path: 'a-propos', element: <AboutPage /> },
     ],
   },
 ])

@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom'
 import { useScrollDirection } from '../hooks/useScrollDirection'
 import { ThemeToggle } from '../../features/theme/ThemeToggle'
 
+import { Download } from 'lucide-react'
+
 const NAV_LINKS = [
   { to: '/', label: 'Accueil' },
   { to: '/projets', label: 'Projets' },
@@ -42,7 +44,17 @@ export function Navbar() {
           ))}
         </ul>
 
-        <ThemeToggle />
+        <div className="flex items-center gap-3">
+          <a
+            href="/CV_RASAMIMANANA_Avotriniaina.pdf"
+            download
+            className="hidden items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-white transition-transform hover:scale-[1.03] sm:inline-flex"
+          >
+            <Download size={16} strokeWidth={2} />
+            Télécharger CV
+          </a>
+          <ThemeToggle />
+        </div>
       </nav>
     </motion.header>
   )
