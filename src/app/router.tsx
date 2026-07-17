@@ -1,12 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom'
 import { RootLayout } from './RootLayout'
+import { HomePage } from '../features/home/HomePage'
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <RootLayout />,
-    children: [
-      // les routes des features viendront ici (Home, Projects, About, Contact)
-    ],
+    children: [{ index: true, element: <HomePage /> }],
   },
 ])
