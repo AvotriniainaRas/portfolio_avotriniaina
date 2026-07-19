@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import avatar from '../../assets/Avotriniaina.png'
+import avatar from '../../assets/Avotriniaina-cutout.png'
 
 export function HeroPhoto() {
   return (
@@ -9,34 +9,41 @@ export function HeroPhoto() {
       transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
       className="relative mx-auto w-fit"
     >
-      {/* Anneau dégradé bleu -> vert */}
-      <div className="absolute inset-0 -m-3 rounded-full bg-gradient-to-tr from-primary via-primary-light to-accent opacity-70 blur-[2px]" />
-
+      {/* Portrait — fond détouré, plus de forme bleue derrière */}
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-        className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white shadow-xl dark:border-gray-950 sm:h-64 sm:w-64"
+        className="relative h-60 w-60 overflow-hidden rounded-full border-4 border-white shadow-2xl dark:border-gray-800 sm:h-72 sm:w-72"
       >
         <img
           src={avatar}
           alt="Avotriniaina Rasamimanana"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-top"
         />
       </motion.div>
 
-      {/* Badge flottante */}
+      {/* CTA — gros boutons bien visibles, sous la photo, hauteur commune pour un alignement propre */}
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute -bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center whitespace-nowrap rounded-2xl border border-gray-200 bg-white/90 px-5 py-2.5 shadow-md backdrop-blur-md dark:border-gray-800 dark:bg-gray-900/90"
+        transition={{ duration: 0.5, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
+        className="relative mt-8 flex flex-wrap items-center justify-center gap-3"
       >
-        <span className="text-sm font-bold text-gray-900 dark:text-white">
-          Avotriniaina RASAMIMANANA
-        </span>
-        <span className="text-xs font-medium text-primary">
-          Développeur Fullstack · DevOps & Cloud
-        </span>
+        <a
+          href="/projets"
+          className="flex h-14 items-center gap-2.5 rounded-full bg-gray-900 py-1 pr-1.5 pl-7 text-base font-semibold text-white shadow-lg transition-transform hover:scale-[1.03] dark:bg-white dark:text-gray-900"
+        >
+          Voir mes projets
+          <span className="flex h-11 w-11 items-center justify-center rounded-full bg-accent text-white">
+            →
+          </span>
+        </a>
+        <a
+          href="/contact"
+          className="flex h-14 items-center rounded-full border-2 border-gray-300 px-7 text-base font-semibold text-gray-800 transition-colors hover:border-primary hover:text-primary dark:border-gray-700 dark:text-gray-200"
+        >
+          Me contacter
+        </a>
       </motion.div>
     </motion.div>
   )
