@@ -10,6 +10,12 @@ export interface TimelineEvent {
 
 export const TIMELINE: TimelineEvent[] = [
   {
+    period: '2020 – 2021',
+    title: 'Baccalauréat série A',
+    description: 'Lycée Espoir Ambohimanarivo Morarano Chrome.',
+    icon: GraduationCap,
+  },
+  {
     period: '2021 – 2022',
     title: 'Baccalauréat série D',
     description: 'Lycée Privé Miotisoa Morarano Chrome.',

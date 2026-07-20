@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { SOCIAL_LINKS } from '../../shared/data/socialLinks'
+import { SOCIAL_LINKS } from '../data/socialLinks'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
@@ -15,14 +15,14 @@ export function FinalCta() {
         className="mx-auto max-w-2xl text-center"
       >
         <p className="mb-3 inline-flex items-center gap-2 text-sm font-semibold tracking-widest text-accent uppercase">
-          Disponible pour un stage de 3 mois
+          Disponible pour un stage ou une mission freelance
         </p>
         <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
           Un projet en tête ? Discutons-en.
         </h2>
         <p className="mx-auto mt-4 max-w-md text-gray-400">
-          Que ce soit pour un stage, une collaboration ou simplement échanger sur un
-          projet, je suis à un message près.
+          Stage, mission freelance, ou simplement une idée à explorer ensemble — je suis à
+          un message près.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">

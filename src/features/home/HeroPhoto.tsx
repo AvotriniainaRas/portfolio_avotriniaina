@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import avatar from '../../assets/Avotriniaina-cutout.png'
+import avatar from '../../assets/Avotriniaina-cutout.webp'
 
 export function HeroPhoto() {
   return (
@@ -13,7 +13,7 @@ export function HeroPhoto() {
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-        className="relative h-60 w-60 overflow-hidden rounded-full border-4 border-white shadow-2xl dark:border-gray-800 sm:h-72 sm:w-72"
+        className="relative mx-auto h-60 w-60 overflow-hidden rounded-full border-4 border-white shadow-2xl dark:border-gray-800 sm:h-72 sm:w-72"
       >
         <img
           src={avatar}

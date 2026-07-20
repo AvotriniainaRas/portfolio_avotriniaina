@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import avatar from '../../assets/Avotriniaina_smile.png'
+import avatar from '../../assets/Avotriniaina-cutout.webp'
 import { SoftSkills } from '../about/SoftSkills'
 
 const EASE = [0.22, 1, 0.36, 1] as const

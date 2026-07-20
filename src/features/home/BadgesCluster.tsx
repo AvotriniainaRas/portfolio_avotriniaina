@@ -20,7 +20,7 @@ const BADGES: Badge[] = [
 
 export function BadgesCluster() {
   return (
-    <div className="mx-auto flex max-w-[15rem] flex-wrap justify-center gap-2.5 lg:mx-0 lg:justify-start">
+    <div className="mx-auto flex max-w-[15rem] flex-wrap justify-center gap-2.5 lg:mr-0 lg:ml-auto lg:justify-end">
       {BADGES.map((badge, index) => (
         <motion.span
           key={badge.label}

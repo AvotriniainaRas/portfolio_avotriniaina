@@ -2,8 +2,8 @@ import { Hero } from './Hero'
 import { StackMarquee } from './StackMarquee'
 import { ProjectsPreview } from './ProjectsPreview'
 import { WhyHireMe } from './WhyHireMe'
-import { AboutPreview } from './AboutPreview'
-import { FinalCta } from './FinalCta'
+// import { AboutPreview } from './AboutPreview'
+import { FinalCta } from '../../shared/components/FinalCta'
 
 export function HomePage() {
   return (
@@ -12,7 +12,7 @@ export function HomePage() {
       <StackMarquee />
       <ProjectsPreview />
       <WhyHireMe />
-      <AboutPreview />
+      {/* <AboutPreview /> */}
       <FinalCta />
     </>
   )

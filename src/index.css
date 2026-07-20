@@ -25,3 +25,12 @@
 .group:hover .animate-marquee {
   animation-play-state: paused;
 }
+
+/* Anneau de focus clavier cohérent sur tous les éléments interactifs */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

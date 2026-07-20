@@ -1,4 +1,12 @@
-import { Layout, Server, Smartphone, Database, Cloud, Layers } from 'lucide-react'
+import {
+  Layout,
+  Server,
+  Smartphone,
+  Database,
+  Cloud,
+  Layers,
+  Network,
+} from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 export interface SkillCategory {
@@ -46,5 +54,15 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     name: 'Architecture & Méthodes',
     icon: Layers,
     skills: ['Clean Architecture', 'MVC', 'Principes SOLID', 'Microservices'],
+  },
+  {
+    name: 'Notion en Réseaux informatiques',
+    icon: Network,
+    skills: [
+      'Routage (OSPF, EIGRP, RIP)',
+      'VLANs',
+      'Administration réseau',
+      'Packet Tracer',
+    ],
   },
 ]

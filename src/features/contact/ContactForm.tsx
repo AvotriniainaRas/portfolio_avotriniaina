@@ -69,6 +69,18 @@ export function ContactForm() {
       noValidate
       className="space-y-5 rounded-2xl border border-gray-200 bg-white p-8 dark:border-gray-800 dark:bg-gray-900/40"
     >
+      <div className="mb-2 flex items-center gap-2.5 border-b border-gray-100 pb-5 dark:border-gray-800">
+        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-900 text-xs font-bold text-white dark:bg-white dark:text-gray-900">
+          AR
+        </span>
+        <div>
+          <span className="block font-semibold tracking-tight">Avotriniaina Ras</span>
+          <span className="block text-xs text-gray-500 dark:text-gray-400">
+            Contactez-moi directement ici
+          </span>
+        </div>
+      </div>
+
       <div>
         <label htmlFor="from_name" className="mb-1.5 block text-sm font-medium">
           Nom
@@ -77,7 +89,7 @@ export function ContactForm() {
           id="from_name"
           name="from_name"
           type="text"
-          className="w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm outline-none transition-colors focus:border-primary dark:border-gray-700"
+          className="w-full rounded-xl border border-transparent bg-gray-100 px-4 py-3 text-sm outline-none transition-colors focus:border-primary focus:bg-white dark:bg-gray-800/60 dark:focus:bg-gray-800"
           placeholder="Votre nom"
         />
         {errors.name && <p className="mt-1 text-xs text-red-500">{errors.name}</p>}
@@ -91,7 +103,7 @@ export function ContactForm() {
           id="from_email"
           name="from_email"
           type="email"
-          className="w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm outline-none transition-colors focus:border-primary dark:border-gray-700"
+          className="w-full rounded-xl border border-transparent bg-gray-100 px-4 py-3 text-sm outline-none transition-colors focus:border-primary focus:bg-white dark:bg-gray-800/60 dark:focus:bg-gray-800"
           placeholder="vous@exemple.com"
         />
         {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
@@ -105,7 +117,7 @@ export function ContactForm() {
           id="message"
           name="message"
           rows={5}
-          className="w-full resize-none rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm outline-none transition-colors focus:border-primary dark:border-gray-700"
+          className="w-full resize-none rounded-xl border border-transparent bg-gray-100 px-4 py-3 text-sm outline-none transition-colors focus:border-primary focus:bg-white dark:bg-gray-800/60 dark:focus:bg-gray-800"
           placeholder="Décrivez votre projet ou votre demande..."
         />
         {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message}</p>}

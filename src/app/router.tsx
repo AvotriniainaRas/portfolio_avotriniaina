@@ -5,6 +5,7 @@ import { ProjectsPage } from '../features/projects/ProjectsPage'
 import { ProjectDetailPage } from '../features/projects/ProjectDetailPage'
 import { AboutPage } from '../features/about/AboutPage'
 import { ContactPage } from '../features/contact/ContactPage'
+import { NotFoundPage } from '../shared/components/NotFoundPage'
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ export const router = createBrowserRouter([
       { path: 'projets/:slug', element: <ProjectDetailPage /> },
       { path: 'a-propos', element: <AboutPage /> },
       { path: 'contact', element: <ContactPage /> },
+      { path: '*', element: <NotFoundPage /> },
     ],
   },
 ])

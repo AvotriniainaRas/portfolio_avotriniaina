@@ -1,44 +1,42 @@
 import { motion } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
 import { CONTACT_METHODS } from './data/contactMethods'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
+// E-mail et téléphone sont déjà mis en avant dans ContactInfoBlocks —
+// ici, juste les canaux complémentaires.
+const OTHER_CHANNELS = CONTACT_METHODS.filter(
+  (m) => m.label === 'LinkedIn' || m.label === 'GitHub' || m.label === 'Facebook'
+)
+
 export function ContactMethods() {
   return (
-    <div className="flex flex-col gap-3">
-      {CONTACT_METHODS.map((method, index) => {
-        const Icon = method.icon
-        return (
-          <motion.a
-            key={method.label}
-            href={method.href}
-            target={method.external ? '_blank' : undefined}
-            rel={method.external ? 'noopener noreferrer' : undefined}
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.45, delay: index * 0.06, ease: EASE }}
-            className="group flex items-center gap-4 rounded-2xl border border-gray-200 bg-white px-5 py-4 transition-colors hover:border-primary dark:border-gray-800 dark:bg-gray-900/40"
-          >
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-              <Icon size={18} />
-            </span>
-            <span className="min-w-0 flex-1">
-              <span className="block text-xs font-semibold tracking-wide text-gray-500 uppercase dark:text-gray-400">
-                {method.label}
-              </span>
-              <span className="block truncate font-medium text-gray-900 dark:text-white">
-                {method.value}
-              </span>
-            </span>
-            <ArrowUpRight
-              size={16}
-              className="shrink-0 text-gray-300 transition-colors group-hover:text-primary dark:text-gray-700"
-            />
-          </motion.a>
-        )
-      })}
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.4, ease: EASE }}
+      className="mt-10"
+    >
+      <p className="mb-3 text-xs font-semibold tracking-wide text-gray-500 uppercase dark:text-gray-400">
+        Aussi disponible sur
+      </p>
+      <div className="flex flex-wrap gap-2.5">
+        {OTHER_CHANNELS.map((method) => {
+          const Icon = method.icon
+          return (
+            <a
+              key={method.label}
+              href={method.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:border-primary hover:text-primary dark:border-gray-800 dark:bg-gray-900/40 dark:text-gray-300"
+            >
+              <Icon size={15} />
+              {method.label}
+            </a>
+          )
+        })}
+      </div>
+    </motion.div>
   )
 }

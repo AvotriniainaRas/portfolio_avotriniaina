@@ -53,7 +53,8 @@ export function Hero() {
             variants={item}
             className="mx-auto mt-4 max-w-md text-lg text-gray-600 dark:text-gray-400"
           >
-            Développeur web &amp; mobile
+            Développeur web &amp; mobile — construire, automatiser et déployer des
+            solutions modernes.
           </motion.p>
 
           {/* Rangée compacte — mobile/tablette uniquement, les colonnes latérales prennent le relais à partir de lg */}
@@ -83,7 +84,7 @@ export function Hero() {
             <HeroPhoto />
           </motion.div>
 
-          <div className="order-3 hidden flex-col items-start lg:flex">
+          <div className="order-3 hidden flex-col items-end lg:flex">
             <BadgesCluster />
             <SocialRow />
           </div>

@@ -22,11 +22,13 @@ export function SkillCategoryCard({
       className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md dark:border-gray-800 dark:bg-gray-900/40"
     >
       <div className="mb-4 flex items-center gap-3">
-        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+        <span className="h-9 w-1 rounded-full bg-accent" aria-hidden="true" />
+        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary/10 text-primary">
           <Icon size={20} strokeWidth={2} />
         </span>
-        <h3 className="font-semibold tracking-tight">{category.name}</h3>
       </div>
+
+      <h3 className="mb-3 font-semibold tracking-tight">{category.name}</h3>
 
       <div className="flex flex-wrap gap-2">
         {category.skills.map((skill) => (
