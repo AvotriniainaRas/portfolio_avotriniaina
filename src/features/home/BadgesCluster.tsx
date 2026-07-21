@@ -14,7 +14,7 @@ const BADGES: Badge[] = [
   { label: 'Flutter', variant: 'solid', rotate: 3, floatDelay: 0.3 },
   { label: 'Docker', variant: 'outline', rotate: -4, floatDelay: 0.8 },
   { label: 'Kubernetes', variant: 'outline', rotate: 2, floatDelay: 1.3 },
-  { label: 'AWS', variant: 'solid', rotate: -2, floatDelay: 0.2 },
+  { label: 'Linux', variant: 'solid', rotate: -2, floatDelay: 0.2 },
   { label: 'CI/CD', variant: 'outline', rotate: 4, floatDelay: 0.9 },
 ]
 

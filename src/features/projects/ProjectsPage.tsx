@@ -17,8 +17,8 @@ export function ProjectsPage() {
         >
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Mes projets</h1>
           <p className="mx-auto mt-3 max-w-xl text-gray-600 dark:text-gray-400">
-            Huit projets académiques, personnels et collaboratifs — du web fullstack au
-            mobile, en passant par l'IoT.
+            Des réalisations concrètes en environnement web fullstack, mobile et Cloud —
+            conçues avec rigueur et le souci du détail
           </p>
         </motion.div>
 

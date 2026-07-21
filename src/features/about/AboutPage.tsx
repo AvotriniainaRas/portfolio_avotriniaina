@@ -26,7 +26,8 @@ export function AboutPage() {
         <p className="mx-auto mt-4 max-w-xl text-gray-600 dark:text-gray-400">
           Étudiant en 3ème année de Licence en informatique à l'EMIT, développeur
           fullstack avec une solide pratique de projets concrets — du backend à
-          l'interface — et des notions DevOps/Cloud.
+          l'interface — avec une passion marqué pour le DevOps/Cloud et des connaissances
+          en réseaux informatiques.
         </p>
       </motion.div>
 

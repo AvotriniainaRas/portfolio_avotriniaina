@@ -48,7 +48,17 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     name: 'DevOps & Cloud',
     icon: Cloud,
-    skills: ['Git', 'GitHub', 'GitLab', 'Docker', 'CI/CD', 'Supabase', 'Cloudflare'],
+    skills: [
+      'Git',
+      'GitHub',
+      'GitLab',
+      'Docker',
+      'CI/CD',
+      'Linux',
+      'Nginx',
+      'Supabase',
+      'Cloudflare',
+    ],
   },
   {
     name: 'Architecture & Méthodes',
@@ -56,13 +66,14 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     skills: ['Clean Architecture', 'MVC', 'Principes SOLID', 'Microservices'],
   },
   {
-    name: 'Notion en Réseaux informatiques',
+    name: 'Réseaux informatiques',
     icon: Network,
     skills: [
       'Routage (OSPF, EIGRP, RIP)',
       'VLANs',
       'Administration réseau',
       'Packet Tracer',
+      'TCP/IP',
     ],
   },
 ]

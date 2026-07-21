@@ -11,7 +11,10 @@ const INFO_BLOCKS = [
   {
     icon: MapPin,
     label: 'Basé à',
-    lines: ['Fianarantsoa, Madagascar', 'Disponible partout pour un stage, à distance'],
+    lines: [
+      'Fianarantsoa, Madagascar',
+      'Disponible partout pour un stage (priorité Antananarivo), ou à distance',
+    ],
   },
   {
     icon: MessageCircle,

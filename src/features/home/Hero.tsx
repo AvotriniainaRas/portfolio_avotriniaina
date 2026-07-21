@@ -53,8 +53,8 @@ export function Hero() {
             variants={item}
             className="mx-auto mt-4 max-w-md text-lg text-gray-600 dark:text-gray-400"
           >
-            Développeur web &amp; mobile — construire, automatiser et déployer des
-            solutions modernes.
+            Développeur Fullstack &amp; Passionné DevOps / Cloud — construire, automatiser
+            et déployer des solutions modernes.
           </motion.p>
 
           {/* Rangée compacte — mobile/tablette uniquement, les colonnes latérales prennent le relais à partir de lg */}

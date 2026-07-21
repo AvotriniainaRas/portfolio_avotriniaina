@@ -39,14 +39,14 @@ export const TIMELINE: TimelineEvent[] = [
     period: 'Formation complémentaire',
     title: 'Attestation en DevOps — ODC Fianarantsoa',
     description:
-      'Approfondissement des notions DevOps et Cloud, avec une première expérience pratique sur des projets intégrant Supabase.',
+      'Approfondissement des notions DevOps et Cloud, avec une première expérience sur le CI/CD et une pratique sur des projets intégrant Supabase.',
     icon: Award,
   },
   {
     period: "Aujourd'hui",
-    title: 'Recherche de stage — 3 mois',
+    title: 'Recherche de stage professionnel — 3 mois (Dès Août 2026)',
     description:
-      "À la recherche d'une équipe professionnelle pour mettre ces compétences fullstack et cette curiosité DevOps au service de projets réels.",
+      "Prêt à intégrer une équipe pour mettre en pratique mes compétences en développement Fullstack, ma passion pour l'automatisation DevOps et mes connaissances en réseaux sur des projets réels.",
     icon: Rocket,
   },
 ]

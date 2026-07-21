@@ -38,10 +38,9 @@ export const PROJECTS: Project[] = [
     architecture:
       'Stack 100% TypeScript : Angular 17+ côté frontend, NestJS côté backend avec Prisma ORM sur PostgreSQL 17. Authentification JWT via Passport.js. Génération de documents (bulletins) via PDFKit.',
     features: [
-      'Gestion des élèves, enseignants et personnel',
-      'Suivi des présences',
-      'Gestion des notes et génération automatique des bulletins',
-      "Suivi de la scolarité sur l'année",
+      'Espace Administrateur : Gestion globale du système (élèves, enseignants, classes, frais de scolarité, emplois du temps et configurations).',
+      'Espace Enseignant : Saisie des notes, suivi des absences/présences au quotidien et évaluation des élèves.',
+      'Portail Parents : Consultation en temps réel du suivi scolaire (notes, bulletins téléchargables, retards et absences de leurs enfants).',
     ],
     technicalHighlights: [
       'Architecture 100% TypeScript de bout en bout, typage partagé entre couches',

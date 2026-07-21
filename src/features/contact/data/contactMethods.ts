@@ -19,7 +19,7 @@ export const CONTACT_METHODS: ContactMethod[] = [
   },
   {
     label: 'Téléphone / WhatsApp',
-    value: '+261 38 099 9336',
+    value: '+261 38 09 993 36',
     href: 'https://wa.me/261380999336',
     icon: Phone,
     external: true,

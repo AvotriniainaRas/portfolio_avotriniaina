@@ -1,12 +1,14 @@
 const STACK_LOOP = [
   'React TS',
   'Spring Boot',
-  'NestJS',
-  'Flutter',
-  'PostgreSQL',
   'Docker',
+  'Flutter',
+  'CI/CD',
+  'PostgreSQL',
+  'Linux',
   'Tailwind CSS',
-  'Framer Motion',
+  'Supabase',
+  'NestJS',
 ]
 
 export function StackMarquee() {
