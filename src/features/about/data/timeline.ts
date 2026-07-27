@@ -22,7 +22,7 @@ export const TIMELINE: TimelineEvent[] = [
     icon: GraduationCap,
   },
   {
-    period: 'Depuis 2022',
+    period: 'Depuis 2023',
     title: 'Licence en Informatique — EMIT Fianarantsoa',
     description:
       "Formation en cours, avec une pratique intensive de projets concrets, du backend à l'interface.",
@@ -32,14 +32,14 @@ export const TIMELINE: TimelineEvent[] = [
     period: 'En parallèle du cursus',
     title: 'Projets académiques, personnels et collaboratifs',
     description:
-      'Aina Trans, BudgetWise, système de gestion scolaire, plateforme FBBM et plusieurs autres projets fullstack et mobiles menés en autonomie ou en équipe.',
+      'Plusieurs autres projets fullstack et mobiles menés en autonomie ou en équipe avec une pratique sur des projets intégrant Cloud.',
     icon: Code2,
   },
   {
     period: 'Formation complémentaire',
     title: 'Attestation en DevOps — ODC Fianarantsoa',
     description:
-      'Approfondissement des notions DevOps et Cloud, avec une première expérience sur le CI/CD et une pratique sur des projets intégrant Supabase.',
+      'Approfondissement des notions DevOps, avec une première expérience sur le CI/CD avec GitLab.',
     icon: Award,
   },
   {

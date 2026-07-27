@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { PROJECTS } from './data/projects'
 import { ProjectsAccordion } from './ProjectsAccordion'
+import { ProjectsGallery } from './ProjectsGallery'
+import { SCREENSHOTS } from './data/screenshots'
 import { FinalCta } from '../../shared/components/FinalCta'
 
 const EASE = [0.22, 1, 0.36, 1] as const
@@ -21,6 +23,17 @@ export function ProjectsPage() {
             conçues avec rigueur et le souci du détail
           </p>
         </motion.div>
+
+        {SCREENSHOTS.length > 0 && (
+          <div className="mb-8">
+            <ProjectsGallery screenshots={SCREENSHOTS} />
+
+            <p className="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
+              Voici le détail complet de mes projets — du contexte technique à
+              l'architecture.
+            </p>
+          </div>
+        )}
 
         <ProjectsAccordion projects={PROJECTS} defaultOpenIndex={0} />
       </section>

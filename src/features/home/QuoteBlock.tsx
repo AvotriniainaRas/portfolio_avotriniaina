@@ -13,7 +13,7 @@ export function QuoteBlock() {
     >
       <Quote size={24} className="mx-auto text-accent lg:mx-0" strokeWidth={2.2} />
       <p className="mt-3 text-sm text-gray-600 italic dark:text-gray-400">
-        Etudiant en Informatique, Je conçois construis des applications web et mobiles
+        Etudiant en Informatique, Je conçois, construis des applications web et mobiles
         fullstack - de l'architecture à l'automatisation de deploiement.
       </p>
     </motion.div>

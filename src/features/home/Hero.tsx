@@ -4,6 +4,7 @@ import { HeroPhoto } from './HeroPhoto'
 import { QuoteBlock } from './QuoteBlock'
 import { StatBlock } from './StatBlock'
 import { BadgesCluster } from './BadgesCluster'
+import { BADGE_LABELS } from './data/badges'
 import { SocialRow } from './SocialRow'
 
 const EASE = [0.22, 1, 0.36, 1] as const
@@ -17,8 +18,6 @@ const item = {
   hidden: { opacity: 0, y: 16 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
 }
-
-const STACK = ['React TS', 'Spring Boot', 'NestJS', 'Flutter', 'Docker', 'AWS']
 
 export function Hero() {
   return (
@@ -62,7 +61,7 @@ export function Hero() {
             variants={item}
             className="mt-6 flex flex-wrap justify-center gap-2 lg:hidden"
           >
-            {STACK.map((tech) => (
+            {BADGE_LABELS.map((tech) => (
               <span
                 key={tech}
                 className="rounded-full border border-gray-200 px-3.5 py-1.5 text-xs font-medium text-gray-600 dark:border-gray-800 dark:text-gray-400"

@@ -1,5 +1,6 @@
 const STACK_LOOP = [
   'React TS',
+  'Angular',
   'Spring Boot',
   'Docker',
   'Flutter',

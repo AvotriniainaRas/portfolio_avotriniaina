@@ -1,22 +1,5 @@
 import { motion } from 'framer-motion'
-
-type Badge = {
-  label: string
-  variant: 'solid' | 'outline'
-  rotate: number
-  floatDelay: number
-}
-
-const BADGES: Badge[] = [
-  { label: 'React TS', variant: 'solid', rotate: -3, floatDelay: 0 },
-  { label: 'Spring Boot', variant: 'outline', rotate: 2, floatDelay: 0.5 },
-  { label: 'NestJS', variant: 'outline', rotate: -2, floatDelay: 1 },
-  { label: 'Flutter', variant: 'solid', rotate: 3, floatDelay: 0.3 },
-  { label: 'Docker', variant: 'outline', rotate: -4, floatDelay: 0.8 },
-  { label: 'Kubernetes', variant: 'outline', rotate: 2, floatDelay: 1.3 },
-  { label: 'Linux', variant: 'solid', rotate: -2, floatDelay: 0.2 },
-  { label: 'CI/CD', variant: 'outline', rotate: 4, floatDelay: 0.9 },
-]
+import { BADGES } from './data/badges'
 
 export function BadgesCluster() {
   return (

@@ -28,6 +28,8 @@ export function ThemeToggle() {
             <motion.circle
               r="9"
               fill="black"
+              cx={isDark ? 8 : 24}
+              cy={4}
               animate={{ cx: isDark ? 8 : 24, cy: 4 }}
               transition={{ duration: 0.5, ease: EASE }}
             />

@@ -5,25 +5,26 @@ export const PROJECTS: Project[] = [
     slug: 'aina-trans',
     title: 'Aina Trans',
     tagline:
-      'Plateforme de gestion de coopérative de transport, de la réservation en ligne au suivi des trajets',
+      'Application web fullstack de réservation en ligne et de gestion opérationnelle pour une coopérative de transport, avec suivi des sièges en temps réel',
     category: 'Application web fullstack',
     featured: true,
-    stack: ['React', 'Spring Boot', 'PostgreSQL'],
+    stack: ['React TS', 'Spring Boot', 'PostgreSQL', 'JWT', 'WebSocket'],
     objective:
-      "Centraliser la gestion opérationnelle d'une coopérative de transport — trajets, véhicules, chauffeurs et lignes — tout en ouvrant la réservation aux voyageurs en ligne.",
+      "Centraliser la gestion opérationnelle d'une coopérative de transport — trajets, véhicules, chauffeurs et lignes — tout en ouvrant la réservation aux voyageurs en ligne et en donnant aux agents une solution de réservation au guichet intégrée à la même plateforme.",
     architecture:
-      'Architecture en couches côté backend (Spring Boot) exposant une API REST consommée par un frontend React. PostgreSQL sert de source de vérité pour les données opérationnelles sensibles (sièges, réservations, trajets).',
+      'API REST Spring Boot sécurisée par JWT, consommée par un frontend React TypeScript. Un canal WebSocket (STOMP) diffuse en temps réel les mises à jour de sièges, tandis qu’une contrainte UNIQUE PostgreSQL empêche toute double réservation au niveau base de données.',
     features: [
-      'Réservation en ligne avec sélection visuelle des sièges en temps réel',
-      'Confirmation automatique par e-mail après réservation',
-      'Distinction entre réservations WEB (en ligne) et LOCAL (guichet)',
-      'Gestion complète des trajets, véhicules, chauffeurs et lignes',
-      'Gestion des voyageurs avec CIN et sexe pour la conformité des manifestes',
+      'Plan de sièges interactif, mis à jour en temps réel via WebSocket',
+      'Réservation en ligne (voyageur) et au guichet (agent), avec confirmation automatique par e-mail',
+      "Tableau de bord et notifications temps réel pour l'administrateur",
+      'Gestion CRUD complète (véhicules, lignes, trajets, chauffeurs) avec génération automatique des sièges',
+      'Feuille de route imprimable A4 et authentification par rôles (voyageur / administrateur)',
     ],
     technicalHighlights: [
-      "Modélisation d'un système de réservation à contraintes fortes (un siège ne peut être réservé deux fois)",
-      'Séparation claire entre logique métier (services Spring Boot) et présentation (composants React)',
-      "Envoi d'e-mails transactionnels automatisés",
+      'Double protection contre les doublons de réservation : vérification applicative + contrainte UNIQUE PostgreSQL',
+      'WebSocket STOMP avec un topic par trajet, pour synchroniser les sièges entre plusieurs utilisateurs',
+      'Séparation stricte DTO / Entité, et contexte React global pour des notifications persistantes',
+      "Génération automatique des sièges à la création d'un véhicule, export PDF optimisé pour un rendu A4 fidèle",
     ],
   },
   {
@@ -102,14 +103,14 @@ export const PROJECTS: Project[] = [
     slug: 'emit-emplois-du-temps',
     title: "Gestion d'emplois du temps EMIT",
     tagline:
-      "Plateforme de gestion des emplois du temps et des salles pour l'université EMIT",
-    category: 'Application web',
+      "Plateforme collaborative de gestion des emplois du temps et des salles pour l'université EMIT, bâtie en microservices",
+    category: 'Application web — projet collaboratif',
     featured: false,
-    stack: ['ASP.NET', 'React TS'],
+    stack: ['ASP.NET', 'React TS', 'Microservices'],
     objective:
-      "Organiser la planification des classes, matières, séances et salles au sein de l'établissement, avec une gestion sécurisée des rôles utilisateurs.",
+      "Organiser la planification des classes, matières, séances et salles au sein de l'établissement, avec une gestion sécurisée des rôles utilisateurs — un projet mené en équipe, avec un backend réparti entre plusieurs membres.",
     architecture:
-      'Backend ASP.NET exposant une API sécurisée par JWT, frontend React TypeScript avec séparation claire des responsabilités entre pages, services et composants.',
+      'Backend découpé en 4 microservices ASP.NET indépendants — une première expérience en architecture microservices — chacun exposant sa propre API sécurisée par JWT. Un frontend unique en React TypeScript consomme ces services, avec une séparation claire des responsabilités entre pages, services et composants.',
     features: [
       'Gestion des classes, matières, séances et salles',
       "Gestion des utilisateurs et des modifications d'emploi du temps",
@@ -117,9 +118,10 @@ export const PROJECTS: Project[] = [
       "Pages de dashboard et d'administration dédiées",
     ],
     technicalHighlights: [
-      'Architecture propre avec séparation des responsabilités entre couches',
-      'Sécurisation des accès via JWT',
-      'Frontend typé de bout en bout avec React TS',
+      'Première mise en pratique concrète des microservices : découpage du backend en 4 services indépendants',
+      'Travail en équipe sur un backend distribué, avec répartition des responsabilités entre membres',
+      'Sécurisation des accès via JWT sur chaque service',
+      'Frontend typé de bout en bout avec React TS, consommant plusieurs API indépendantes',
     ],
   },
   {
