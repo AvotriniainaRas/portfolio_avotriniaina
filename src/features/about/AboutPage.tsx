@@ -24,9 +24,9 @@ export function AboutPage() {
       >
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">À propos</h1>
         <p className="mx-auto mt-4 max-w-xl text-gray-600 dark:text-gray-400">
-          Étudiant en 3ème année de Licence en informatique à l'EMIT, développeur
-          fullstack avec une solide pratique de projets concrets — du backend à
-          l'interface — avec une passion marqué pour le DevOps/Cloud et des connaissances
+          Développeur fullstack &amp; DevOps junior et étudiant en Master 1 en
+          informatique à l&apos;EMIT, avec une solide pratique de projets concrets — du
+          backend à l&apos;interface —, une passion marquée pour le DevOps et des notions
           en réseaux informatiques.
         </p>
       </motion.div>
@@ -67,7 +67,7 @@ export function AboutPage() {
           Parcours
         </p>
         <h2 className="mb-8 text-2xl font-bold tracking-tight sm:text-3xl">
-          De la formation à la <span className="text-primary">pratique</span>
+          De la formation aux <span className="text-primary">projets concrets</span>
         </h2>
         <Timeline />
       </div>
@@ -100,12 +100,12 @@ export function AboutPage() {
         className="rounded-3xl bg-gray-950 px-8 py-14 text-center dark:bg-black"
       >
         <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-          Envie d'en savoir plus{' '}
+          Envie d&apos;en savoir plus{' '}
           <span className="text-accent">ou de garder mon profil sous la main</span> ?
         </h2>
         <p className="mx-auto mt-3 max-w-md text-gray-400">
-          Téléchargez mon CV pour retrouver mon parcours et mes compétences en un coup
-          d'œil.
+          Téléchargez mon CV pour retrouver mon parcours, mes expériences et mes
+          compétences en un coup d&apos;œil.
         </p>
         <a
           href="/CV_RASAMIMANANA_Avotriniaina.pdf"

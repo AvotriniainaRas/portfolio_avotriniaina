@@ -1,4 +1,4 @@
-import { GraduationCap, Award, Rocket, Code2 } from 'lucide-react'
+import { GraduationCap, Award, Briefcase, Rocket, Code2 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 export interface TimelineEvent {
@@ -22,31 +22,52 @@ export const TIMELINE: TimelineEvent[] = [
     icon: GraduationCap,
   },
   {
-    period: 'Depuis 2023',
+    period: '2023 – 2026',
     title: 'Licence en Informatique — EMIT Fianarantsoa',
     description:
-      "Formation en cours, avec une pratique intensive de projets concrets, du backend à l'interface.",
+      'Diplôme obtenu avec une solide pratique sur plus de 10 projets concrets, du développement backend aux interfaces modernes.',
     icon: GraduationCap,
   },
   {
-    period: 'En parallèle du cursus',
-    title: 'Projets académiques, personnels et collaboratifs',
+    period: 'Juin – Août 2025',
+    title: 'Stagiaire Développeur — Eray Digital',
     description:
-      'Plusieurs autres projets fullstack et mobiles menés en autonomie ou en équipe avec une pratique sur des projets intégrant Cloud.',
-    icon: Code2,
+      'Développement d’un système de gestion scolaire multi-rôles (Admin, Professeur, Parents) avec Angular 17+, NestJS, PostgreSQL, JWT et génération de PDF.',
+    icon: Briefcase,
   },
   {
-    period: 'Formation complémentaire',
-    title: 'Attestation en DevOps — ODC Fianarantsoa',
+    period: 'Formations complémentaires',
+    title: 'Attestations DevOps & IA Générative — Orange Digital Center',
     description:
-      'Approfondissement des notions DevOps, avec une première expérience sur le CI/CD avec GitLab.',
+      'Attestation en DevOps (ODC Fianarantsoa — CI/CD, conteneurisation) et attestation en Prompt Engineering & IA Générative (ODC Antananarivo).',
     icon: Award,
   },
   {
-    period: "Aujourd'hui",
-    title: 'Recherche de stage professionnel — 3 mois (Dès Août 2026)',
+    period: 'Juillet – Octobre 2026',
+    title: 'Stagiaire Développeur & DevOps — FBBM',
     description:
-      "Prêt à intégrer une équipe pour mettre en pratique mes compétences en développement Fullstack, ma passion pour l'automatisation DevOps et mes connaissances en réseaux sur des projets réels.",
+      'Numérisation de la gestion événementielle (inscriptions, paiements, tickets/badges) et application mobile de contrôle d’accès avec FastAPI, React TS et Flutter.',
+    icon: Briefcase,
+  },
+  {
+    period: 'En parallèle du cursus',
+    title: 'Projets académiques et personnels',
+    description:
+      'Conception d’applications fullstack et mobiles (Aina_Trans, Budget_Wise) intégrant le Cloud, Docker et les bonnes pratiques d’architecture.',
+    icon: Code2,
+  },
+  {
+    period: 'Depuis 2026',
+    title: 'Master 1 en Informatique — EMIT Fianarantsoa',
+    description:
+      'Poursuite des études en Master 1, approfondissement en architecture logicielle, DevOps et réseaux informatiques.',
+    icon: GraduationCap,
+  },
+  {
+    period: "Aujourd'hui",
+    title: 'Développeur Fullstack & DevOps Junior — À l’écoute d’opportunités',
+    description:
+      'Disponible pour un stage ou un poste junior en développement web fullstack, mobile ou DevOps (en présentiel ou en remote).',
     icon: Rocket,
   },
 ]
