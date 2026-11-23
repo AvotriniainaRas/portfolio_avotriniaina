@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import avatar from '../../assets/Avotriniaina-cutout.webp'
+import { LocalizedLink } from '../../i18n/LocalizedLink'
 
 export function HeroPhoto() {
   return (
@@ -29,21 +30,21 @@ export function HeroPhoto() {
         transition={{ duration: 0.5, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
         className="relative mt-8 flex flex-wrap items-center justify-center gap-3"
       >
-        <a
-          href="/projets"
+        <LocalizedLink
+          to="projects"
           className="flex h-14 items-center gap-2.5 rounded-full bg-gray-900 py-1 pr-1.5 pl-7 text-base font-semibold text-white shadow-lg transition-transform hover:scale-[1.03] dark:bg-white dark:text-gray-900"
         >
           Voir mes projets
           <span className="flex h-11 w-11 items-center justify-center rounded-full bg-accent text-white">
             →
           </span>
-        </a>
-        <a
-          href="/contact"
+        </LocalizedLink>
+        <LocalizedLink
+          to="contact"
           className="flex h-14 items-center rounded-full border-2 border-gray-300 px-7 text-base font-semibold text-gray-800 transition-colors hover:border-primary hover:text-primary dark:border-gray-700 dark:text-gray-200"
         >
           Me contacter
-        </a>
+        </LocalizedLink>
       </motion.div>
     </motion.div>
   )

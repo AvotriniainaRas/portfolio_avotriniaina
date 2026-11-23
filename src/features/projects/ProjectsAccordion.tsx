@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { LocalizedLink } from '../../i18n/LocalizedLink'
 import { ArrowUpRight } from 'lucide-react'
 import type { Project } from './types'
 
@@ -93,13 +93,14 @@ export function ProjectsAccordion({
                       ))}
                     </div>
 
-                    <Link
-                      to={`/projets/${project.slug}`}
+                    <LocalizedLink
+                      to="project"
+                      params={{ slug: project.slug }}
                       className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-white hover:text-accent"
                     >
                       Voir le projet
                       <ArrowUpRight size={15} />
-                    </Link>
+                    </LocalizedLink>
                   </div>
                 </motion.div>
               )}

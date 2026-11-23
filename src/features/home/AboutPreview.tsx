@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { LocalizedLink } from '../../i18n/LocalizedLink'
 import { GraduationCap, Award, Rocket } from 'lucide-react'
 import { ArrowUpRight } from 'lucide-react'
 
@@ -49,13 +49,13 @@ export function AboutPreview() {
             du backend à l'interface — et j'approfondis mes notions de déploiement et
             d'infrastructure au fil de mes projets.
           </p>
-          <Link
-            to="/a-propos"
+          <LocalizedLink
+            to="about"
             className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-accent"
           >
             En savoir plus sur mon parcours
             <ArrowUpRight size={15} />
-          </Link>
+          </LocalizedLink>
         </motion.div>
 
         {/* Mini timeline */}

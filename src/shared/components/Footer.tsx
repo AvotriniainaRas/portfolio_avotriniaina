@@ -1,17 +1,20 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { LocalizedLink } from '../../i18n/LocalizedLink'
+import { useI18n } from '../../i18n/useI18n'
+import type { RouteKey } from '../../i18n/routes'
 import { SOCIAL_LINKS } from '../data/socialLinks'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
 const NAV_LINKS = [
-  { to: '/', label: 'Accueil' },
-  { to: '/projets', label: 'Projets' },
-  { to: '/a-propos', label: 'À propos' },
-  { to: '/contact', label: 'Contact' },
-]
+  'home',
+  'projects',
+  'about',
+  'contact',
+] as const satisfies readonly RouteKey[]
 
 export function Footer() {
+  const { t } = useI18n()
   const year = new Date().getFullYear()
 
   return (
@@ -26,29 +29,27 @@ export function Footer() {
         <div className="flex flex-col items-center gap-10 sm:flex-row sm:items-start sm:justify-between">
           {/* Identité */}
           <div className="text-center sm:text-left">
-            <Link to="/" className="inline-flex items-center gap-2.5">
+            <LocalizedLink to="home" className="inline-flex items-center gap-2.5">
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-xs font-bold text-gray-900">
                 AR
               </span>
               <span className="text-lg font-semibold tracking-tight text-white">
                 Avotriniaina Ras
               </span>
-            </Link>
-            <p className="mt-3 max-w-xs text-sm text-gray-400">
-              Développeur Fullstack · DevOps & Cloud — Étudiant à l'EMIT Fianarantsoa.
-            </p>
+            </LocalizedLink>
+            <p className="mt-3 max-w-xs text-sm text-gray-400">{t.footer.tagline}</p>
           </div>
 
           {/* Navigation secondaire */}
           <nav className="flex flex-col items-center gap-2.5 text-sm sm:items-start">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
+            {NAV_LINKS.map((key) => (
+              <LocalizedLink
+                key={key}
+                to={key}
                 className="text-gray-400 transition-colors hover:text-white"
               >
-                {link.label}
-              </Link>
+                {t.nav[key]}
+              </LocalizedLink>
             ))}
           </nav>
 
@@ -73,7 +74,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-500">
-          © {year} Avotriniaina Rasamimanana. Tous droits réservés.
+          {t.footer.rights(year)}
         </div>
       </motion.div>
     </footer>

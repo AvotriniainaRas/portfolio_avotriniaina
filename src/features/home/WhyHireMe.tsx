@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { LocalizedLink } from '../../i18n/LocalizedLink'
 import avatar from '../../assets/Avotriniaina-cutout.webp'
 import { SoftSkills } from '../about/SoftSkills'
 
@@ -93,12 +93,12 @@ export function WhyHireMe() {
               transition={{ duration: 0.5, delay: 0.3, ease: EASE }}
               className="mt-9"
             >
-              <Link
-                to="/contact"
+              <LocalizedLink
+                to="contact"
                 className="inline-flex items-center rounded-full border-2 border-primary px-7 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
               >
                 Discutons de votre projet
-              </Link>
+              </LocalizedLink>
             </motion.div>
           </div>
         </div>

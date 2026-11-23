@@ -1,20 +1,25 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { NavLink } from 'react-router-dom'
+import { LocalizedNavLink } from '../../i18n/LocalizedLink'
+import { useI18n } from '../../i18n/useI18n'
+import type { RouteKey } from '../../i18n/routes'
+import { LanguageSwitcher } from './LanguageSwitcher'
 import { useScrolled } from '../hooks/useScrolled'
 import { ThemeToggle } from '../../features/theme/ThemeToggle'
 import { Download, Menu, X } from 'lucide-react'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
+/** Clés des pages du menu ; les libellés viennent du dictionnaire (t.nav.<clé>). */
 const CENTER_LINKS = [
-  { to: '/', label: 'Accueil' },
-  { to: '/projets', label: 'Projets' },
-  { to: '/a-propos', label: 'À propos' },
-  { to: '/contact', label: 'Contact' },
-]
+  'home',
+  'projects',
+  'about',
+  'contact',
+] as const satisfies readonly RouteKey[]
 
 export function Navbar() {
+  const { t } = useI18n()
   const scrolled = useScrolled()
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -34,30 +39,32 @@ export function Navbar() {
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:grid lg:grid-cols-[1fr_auto_1fr]">
         {/* Logo + nom, à gauche */}
-        <NavLink to="/" className="flex items-center gap-2.5 justify-self-start">
+        <LocalizedNavLink
+          to="home"
+          className="flex items-center gap-2.5 justify-self-start"
+        >
           <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-900 text-sm font-bold text-white dark:bg-white dark:text-gray-900">
             AR
           </span>
           <span className="hidden text-base font-semibold tracking-tight sm:inline">
             Avotriniaina Ras
           </span>
-        </NavLink>
+        </LocalizedNavLink>
 
         {/* Liens principaux, centrés — desktop uniquement */}
         <ul className="hidden items-center gap-8 justify-self-center text-sm font-medium lg:flex">
-          {CENTER_LINKS.map((link) => (
-            <li key={link.to}>
-              <NavLink
-                to={link.to}
-                end={link.to === '/'}
+          {CENTER_LINKS.map((key) => (
+            <li key={key}>
+              <LocalizedNavLink
+                to={key}
                 className={({ isActive }) =>
                   `transition-colors hover:text-primary ${
                     isActive ? 'text-primary' : 'text-gray-600 dark:text-gray-300'
                   }`
                 }
               >
-                {link.label}
-              </NavLink>
+                {t.nav[key]}
+              </LocalizedNavLink>
             </li>
           ))}
         </ul>
@@ -70,14 +77,15 @@ export function Navbar() {
             className="hidden items-center gap-2 rounded-full bg-gray-900 px-4 py-2 text-sm font-medium text-white transition-transform hover:scale-[1.03] sm:inline-flex dark:bg-white dark:text-gray-900"
           >
             <Download size={16} strokeWidth={2} />
-            Télécharger CV
+            {t.nav.downloadCv}
           </a>
+          <LanguageSwitcher />
           <ThemeToggle />
 
           <button
             type="button"
             onClick={() => setMenuOpen((open) => !open)}
-            aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+            aria-label={menuOpen ? t.nav.closeMenu : t.nav.openMenu}
             aria-expanded={menuOpen}
             className="flex h-9 w-9 items-center justify-center rounded-full text-gray-700 transition-colors hover:bg-gray-100 lg:hidden dark:text-gray-300 dark:hover:bg-gray-900"
           >
@@ -97,11 +105,10 @@ export function Navbar() {
             className="overflow-hidden border-t border-gray-200 bg-white lg:hidden dark:border-gray-800 dark:bg-gray-950"
           >
             <ul className="flex flex-col px-6 py-4 text-base font-medium">
-              {CENTER_LINKS.map((link) => (
-                <li key={link.to}>
-                  <NavLink
-                    to={link.to}
-                    end={link.to === '/'}
+              {CENTER_LINKS.map((key) => (
+                <li key={key}>
+                  <LocalizedNavLink
+                    to={key}
                     onClick={() => setMenuOpen(false)}
                     className={({ isActive }) =>
                       `block py-3 transition-colors hover:text-primary ${
@@ -109,8 +116,8 @@ export function Navbar() {
                       }`
                     }
                   >
-                    {link.label}
-                  </NavLink>
+                    {t.nav[key]}
+                  </LocalizedNavLink>
                 </li>
               ))}
             </ul>
@@ -122,7 +129,7 @@ export function Navbar() {
                 className="flex items-center justify-center gap-2 rounded-full bg-gray-900 px-4 py-3 text-sm font-medium text-white dark:bg-white dark:text-gray-900"
               >
                 <Download size={16} strokeWidth={2} />
-                Télécharger CV
+                {t.nav.downloadCv}
               </a>
             </div>
           </motion.div>

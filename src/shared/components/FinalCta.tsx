@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { LocalizedLink } from '../../i18n/LocalizedLink'
 import { SOCIAL_LINKS } from '../data/socialLinks'
 
 const EASE = [0.22, 1, 0.36, 1] as const
@@ -26,15 +26,15 @@ export function FinalCta() {
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <Link
-            to="/contact"
+          <LocalizedLink
+            to="contact"
             className="inline-flex h-14 items-center gap-2.5 rounded-full bg-accent py-1 pr-1.5 pl-7 text-base font-semibold text-white shadow-lg transition-transform hover:scale-[1.03]"
           >
             Me contacter
             <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/15">
               →
             </span>
-          </Link>
+          </LocalizedLink>
           <a
             href="mailto:avotriniainaras2@gmail.com"
             className="text-sm font-medium text-gray-300 hover:text-white"

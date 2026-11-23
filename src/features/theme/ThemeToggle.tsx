@@ -1,18 +1,20 @@
 import { motion } from 'framer-motion'
 import { useTheme } from './useTheme'
+import { useI18n } from '../../i18n/useI18n'
 
 const RAY_ANGLES = [0, 45, 90, 135, 180, 225, 270, 315]
 const EASE = [0.22, 1, 0.36, 1] as const
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme()
+  const { t } = useI18n()
   const isDark = theme === 'dark'
 
   return (
     <button
       type="button"
       onClick={toggleTheme}
-      aria-label={isDark ? 'Activer le thème clair' : 'Activer le thème sombre'}
+      aria-label={isDark ? t.theme.toLight : t.theme.toDark}
       className="relative flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
     >
       <motion.svg

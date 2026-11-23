@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { LocalizedLink } from '../../i18n/LocalizedLink'
 import { PROJECTS } from '../projects/data/projects'
 import { ProjectsAccordion } from '../projects/ProjectsAccordion'
 
@@ -50,15 +50,15 @@ export function ProjectsPreview() {
           transition={{ duration: 0.5, delay: 0.2, ease: EASE }}
           className="mt-10 flex justify-center sm:justify-start"
         >
-          <Link
-            to="/projets"
+          <LocalizedLink
+            to="projects"
             className="inline-flex h-14 items-center gap-2.5 rounded-full bg-gray-900 py-1 pr-1.5 pl-7 text-base font-semibold text-white shadow-lg transition-transform hover:scale-[1.03] dark:bg-white dark:text-gray-900"
           >
             Voir tous les projets
             <span className="flex h-11 w-11 items-center justify-center rounded-full bg-accent text-white">
               →
             </span>
-          </Link>
+          </LocalizedLink>
         </motion.div>
       </div>
     </section>
