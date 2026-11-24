@@ -15,7 +15,7 @@ export function NotFoundPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: EASE }}
       >
-        <p className="text-sm font-semibold tracking-widest text-primary uppercase">
+        <p className="text-sm font-semibold tracking-widest text-primary-text uppercase">
           {t.notFound.code}
         </p>
         <h1 className="mt-3 text-5xl font-bold tracking-tight sm:text-6xl">

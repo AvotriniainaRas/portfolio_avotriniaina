@@ -17,7 +17,7 @@ export function StackMarquee() {
   const loop = [...STACK_LOOP, ...STACK_LOOP]
 
   return (
-    <div className="group relative overflow-hidden border-y border-gray-900 bg-gray-950 py-5 dark:border-gray-800">
+    <div className="dark group relative overflow-hidden border-y border-gray-900 bg-gray-950 py-5 dark:border-gray-800">
       <div className="flex w-max animate-marquee items-center">
         {loop.map((tech, index) => (
           <span key={`${tech}-${index}`} className="flex items-center">
@@ -27,7 +27,7 @@ export function StackMarquee() {
             <span
               aria-hidden="true"
               className={`text-lg font-bold sm:text-xl ${
-                index % 2 === 0 ? 'text-accent' : 'text-primary-light'
+                index % 2 === 0 ? 'text-accent-text' : 'text-primary-light'
               }`}
             >
               +

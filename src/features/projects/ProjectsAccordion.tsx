@@ -28,7 +28,7 @@ export function ProjectsAccordion({
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: index * 0.05, ease: EASE }}
             className={`overflow-hidden rounded-2xl transition-colors ${
-              isOpen ? 'bg-gray-900 dark:bg-black' : 'bg-gray-50 dark:bg-gray-900/40'
+              isOpen ? 'dark bg-gray-900 dark:bg-black' : 'bg-gray-50 dark:bg-gray-900/40'
             }`}
           >
             <button
@@ -40,7 +40,7 @@ export function ProjectsAccordion({
               <span className="flex items-center gap-4 sm:gap-6">
                 <span
                   className={`text-sm font-semibold tabular-nums ${
-                    isOpen ? 'text-gray-500' : 'text-gray-400 dark:text-gray-600'
+                    isOpen ? 'text-gray-400' : 'text-gray-500 dark:text-gray-400'
                   }`}
                 >
                   {String(index + 1).padStart(2, '0')}.
@@ -75,7 +75,7 @@ export function ProjectsAccordion({
                   className="overflow-hidden"
                 >
                   <div className="px-6 pb-7 sm:px-8">
-                    <p className="text-xs font-semibold tracking-wide text-accent uppercase">
+                    <p className="text-xs font-semibold tracking-wide text-accent-text uppercase">
                       {project.category}
                     </p>
                     <p className="mt-2 max-w-xl text-sm text-gray-300 sm:text-base">
@@ -96,7 +96,7 @@ export function ProjectsAccordion({
                     <LocalizedLink
                       to="project"
                       params={{ slug: project.slug }}
-                      className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-white hover:text-accent"
+                      className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-white hover:text-accent-text"
                     >
                       Voir le projet
                       <ArrowUpRight size={15} />

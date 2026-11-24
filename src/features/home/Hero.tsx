@@ -44,8 +44,8 @@ export function Hero() {
             variants={item}
             className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
           >
-            Je suis <span className="text-primary">Avotriniaina</span>{' '}
-            <span className="text-accent">Ras</span>
+            Je suis <span className="text-primary-text">Avotriniaina</span>{' '}
+            <span className="text-accent-text">Ras</span>
           </motion.h1>
 
           <motion.p

@@ -6,7 +6,7 @@ const EASE = [0.22, 1, 0.36, 1] as const
 
 export function FinalCta() {
   return (
-    <section className="bg-gray-950 px-6 py-20 sm:py-24 dark:bg-black">
+    <section className="dark bg-gray-950 px-6 py-20 sm:py-24 dark:bg-black">
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -14,7 +14,7 @@ export function FinalCta() {
         transition={{ duration: 0.6, ease: EASE }}
         className="mx-auto max-w-2xl text-center"
       >
-        <p className="mb-3 inline-flex items-center gap-2 text-sm font-semibold tracking-widest text-accent uppercase">
+        <p className="mb-3 inline-flex items-center gap-2 text-sm font-semibold tracking-widest text-accent-text uppercase">
           Disponible pour un stage ou une mission freelance
         </p>
         <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -53,7 +53,7 @@ export function FinalCta() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-800 text-gray-400 transition-colors hover:border-accent hover:text-accent"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-800 text-gray-400 transition-colors hover:border-accent hover:text-accent-text"
               >
                 <Icon size={16} />
               </a>

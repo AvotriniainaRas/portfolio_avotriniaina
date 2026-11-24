@@ -46,7 +46,7 @@ export function HeroBackground() {
       />
 
       {/* Fondu vers le fond en bas pour fusionner avec le reste de la page */}
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white to-transparent dark:from-gray-950" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-surface to-transparent" />
     </div>
   )
 }

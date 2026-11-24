@@ -5,7 +5,7 @@ import { ScrollToTop } from '../shared/components/ScrollToTop'
 
 export function RootLayout() {
   return (
-    <div className="flex min-h-screen flex-col bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors">
+    <div className="flex min-h-screen flex-col bg-surface text-text transition-colors">
       <ScrollToTop />
       <Navbar />
       <main className="flex-1 pt-16">

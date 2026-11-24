@@ -24,7 +24,7 @@ export function SocialRow() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-gray-600 transition-colors hover:border-primary hover:text-primary dark:border-gray-800 dark:text-gray-400"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-gray-600 transition-colors hover:border-primary hover:text-primary-text dark:border-gray-800 dark:text-gray-400"
             >
               <Icon size={15} />
             </a>

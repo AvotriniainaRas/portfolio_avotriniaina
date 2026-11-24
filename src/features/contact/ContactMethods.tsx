@@ -29,7 +29,7 @@ export function ContactMethods() {
               href={method.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:border-primary hover:text-primary dark:border-gray-800 dark:bg-gray-900/40 dark:text-gray-300"
+              className="flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:border-primary hover:text-primary-text dark:border-gray-800 dark:bg-gray-900/40 dark:text-gray-300"
             >
               <Icon size={15} />
               {method.label}

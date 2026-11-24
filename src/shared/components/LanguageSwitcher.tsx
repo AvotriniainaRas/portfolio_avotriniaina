@@ -22,7 +22,7 @@ function LocaleOption({ target, active }: { target: Locale; active: boolean }) {
       className={`rounded-full px-2.5 py-1 text-xs font-semibold tracking-wide uppercase transition-colors ${
         active
           ? 'bg-gray-900 text-white dark:bg-white dark:text-gray-900'
-          : 'text-gray-600 hover:text-primary dark:text-gray-300'
+          : 'text-gray-600 hover:text-primary-text dark:text-gray-300'
       }`}
     >
       {target}

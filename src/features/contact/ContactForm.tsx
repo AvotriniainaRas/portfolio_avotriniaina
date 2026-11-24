@@ -47,14 +47,14 @@ export function ContactForm() {
         transition={{ duration: 0.4, ease: EASE }}
         className="flex flex-col items-center rounded-2xl border border-gray-200 bg-white p-10 text-center dark:border-gray-800 dark:bg-gray-900/40"
       >
-        <CheckCircle2 size={40} className="text-accent" />
+        <CheckCircle2 size={40} className="text-accent-text" />
         <h3 className="mt-4 text-lg font-semibold">Message envoyé !</h3>
         <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
           Merci, je vous répondrai dès que possible.
         </p>
         <button
           onClick={reset}
-          className="mt-6 text-sm font-medium text-primary hover:underline"
+          className="mt-6 text-sm font-medium text-primary-text hover:underline"
         >
           Envoyer un autre message
         </button>

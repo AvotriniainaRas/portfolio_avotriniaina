@@ -21,12 +21,12 @@ export function Timeline() {
               transition={{ duration: 0.5, delay: index * 0.08, ease: EASE }}
               className="relative flex gap-5 pl-0 sm:gap-6"
             >
-              <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-primary bg-white text-primary shadow-sm dark:bg-gray-950 sm:h-12 sm:w-12">
+              <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-primary bg-white text-primary-text shadow-sm dark:bg-gray-950 sm:h-12 sm:w-12">
                 <Icon size={18} strokeWidth={2} />
               </span>
 
               <div className="pt-1">
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent-text">
                   {event.period}
                 </p>
                 <h3 className="mt-1 font-semibold tracking-tight">{event.title}</h3>

@@ -48,7 +48,7 @@ export function ProjectDetailPage() {
         transition={{ duration: 0.5, ease: EASE }}
       >
         {/* Bandeau de couverture décoratif */}
-        <div className="relative overflow-hidden bg-gray-950 px-6 py-16 sm:py-20 dark:bg-black">
+        <div className="dark relative overflow-hidden bg-gray-950 px-6 py-16 sm:py-20 dark:bg-black">
           <div className="mx-auto max-w-3xl">
             <LocalizedLink
               to="projects"
@@ -59,7 +59,7 @@ export function ProjectDetailPage() {
             </LocalizedLink>
 
             <div className="mt-6 flex flex-wrap items-center gap-2">
-              <span className="rounded-full border border-gray-700 px-3 py-1 text-xs font-semibold text-accent uppercase">
+              <span className="rounded-full border border-gray-700 px-3 py-1 text-xs font-semibold text-accent-text uppercase">
                 {project.category}
               </span>
               {project.featured && (
@@ -122,7 +122,7 @@ export function ProjectDetailPage() {
               return (
                 <div key={key}>
                   <div className="mb-3 flex items-center gap-2.5">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary-text">
                       <Icon size={17} strokeWidth={2} />
                     </span>
                     <h2 className="text-lg font-semibold tracking-tight">{title}</h2>
@@ -153,7 +153,7 @@ export function ProjectDetailPage() {
             <LocalizedLink
               to="project"
               params={{ slug: previous.slug }}
-              className="inline-flex h-12 items-center gap-2 rounded-full border-2 border-gray-300 px-6 text-sm font-semibold text-gray-800 transition-colors hover:border-primary hover:text-primary dark:border-gray-700 dark:text-gray-200"
+              className="inline-flex h-12 items-center gap-2 rounded-full border-2 border-gray-300 px-6 text-sm font-semibold text-gray-800 transition-colors hover:border-primary hover:text-primary-text dark:border-gray-700 dark:text-gray-200"
             >
               <ArrowLeft size={15} />
               {previous.title}
@@ -162,14 +162,14 @@ export function ProjectDetailPage() {
             <LocalizedLink
               to="project"
               params={{ slug: next.slug }}
-              className="inline-flex h-12 items-center gap-2 rounded-full border-2 border-gray-300 px-6 text-sm font-semibold text-gray-800 transition-colors hover:border-primary hover:text-primary dark:border-gray-700 dark:text-gray-200"
+              className="inline-flex h-12 items-center gap-2 rounded-full border-2 border-gray-300 px-6 text-sm font-semibold text-gray-800 transition-colors hover:border-primary hover:text-primary-text dark:border-gray-700 dark:text-gray-200"
             >
               {next.title}
               <ArrowRight size={15} />
             </LocalizedLink>
           </div>
 
-          <div className="mt-10 rounded-2xl bg-gray-950 px-6 py-10 text-center dark:bg-black">
+          <div className="dark mt-10 rounded-2xl bg-gray-950 px-6 py-10 text-center dark:bg-black">
             <p className="font-semibold text-white">
               Une question sur ce projet, ou une idée similaire en tête ?
             </p>

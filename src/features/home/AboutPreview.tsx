@@ -42,7 +42,7 @@ export function AboutPreview() {
           </p>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Étudiant en informatique,{' '}
-            <span className="text-accent">en route vers le DevOps &amp; Cloud</span>
+            <span className="text-accent-text">en route vers le DevOps &amp; Cloud</span>
           </h2>
           <p className="mx-auto mt-4 max-w-md text-gray-600 lg:mx-0 dark:text-gray-400">
             En 3ème année de Licence à l'EMIT, je développe des applications fullstack —
@@ -51,7 +51,7 @@ export function AboutPreview() {
           </p>
           <LocalizedLink
             to="about"
-            className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-accent"
+            className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary-text hover:text-accent-text"
           >
             En savoir plus sur mon parcours
             <ArrowUpRight size={15} />
@@ -80,7 +80,7 @@ export function AboutPreview() {
                     <Icon size={16} strokeWidth={2} />
                   </span>
                   <div>
-                    <p className="text-xs font-semibold tracking-wide text-accent uppercase">
+                    <p className="text-xs font-semibold tracking-wide text-accent-text uppercase">
                       {milestone.period}
                     </p>
                     <p className="mt-0.5 font-semibold text-gray-900 dark:text-white">

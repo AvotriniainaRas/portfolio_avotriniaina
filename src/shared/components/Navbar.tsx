@@ -33,7 +33,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b bg-white/80 backdrop-blur-md transition-shadow duration-300 dark:bg-gray-950/80 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b bg-surface/80 backdrop-blur-md transition-shadow duration-300 ${
         scrolled ? 'border-gray-200 shadow-sm dark:border-gray-800' : 'border-transparent'
       }`}
     >
@@ -58,8 +58,8 @@ export function Navbar() {
               <LocalizedNavLink
                 to={key}
                 className={({ isActive }) =>
-                  `transition-colors hover:text-primary ${
-                    isActive ? 'text-primary' : 'text-gray-600 dark:text-gray-300'
+                  `transition-colors hover:text-primary-text ${
+                    isActive ? 'text-primary-text' : 'text-gray-600 dark:text-gray-300'
                   }`
                 }
               >
@@ -102,7 +102,7 @@ export function Navbar() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: EASE }}
-            className="overflow-hidden border-t border-gray-200 bg-white lg:hidden dark:border-gray-800 dark:bg-gray-950"
+            className="overflow-hidden border-t border-gray-200 bg-surface lg:hidden dark:border-gray-800"
           >
             <ul className="flex flex-col px-6 py-4 text-base font-medium">
               {CENTER_LINKS.map((key) => (
@@ -111,8 +111,10 @@ export function Navbar() {
                     to={key}
                     onClick={() => setMenuOpen(false)}
                     className={({ isActive }) =>
-                      `block py-3 transition-colors hover:text-primary ${
-                        isActive ? 'text-primary' : 'text-gray-700 dark:text-gray-300'
+                      `block py-3 transition-colors hover:text-primary-text ${
+                        isActive
+                          ? 'text-primary-text'
+                          : 'text-gray-700 dark:text-gray-300'
                       }`
                     }
                   >

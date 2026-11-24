@@ -60,8 +60,8 @@ export function WhyHireMe() {
               transition={{ duration: 0.5, ease: EASE }}
               className="text-3xl font-bold tracking-tight sm:text-4xl"
             >
-              Pourquoi <span className="text-primary">me faire confiance</span> pour votre
-              prochain projet ?
+              Pourquoi <span className="text-primary-text">me faire confiance</span> pour
+              votre prochain projet ?
             </motion.h2>
 
             <motion.p
@@ -95,7 +95,7 @@ export function WhyHireMe() {
             >
               <LocalizedLink
                 to="contact"
-                className="inline-flex items-center rounded-full border-2 border-primary px-7 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
+                className="inline-flex items-center rounded-full border-2 border-primary px-7 py-3 text-sm font-semibold text-primary-text transition-colors hover:bg-primary hover:text-white"
               >
                 Discutons de votre projet
               </LocalizedLink>

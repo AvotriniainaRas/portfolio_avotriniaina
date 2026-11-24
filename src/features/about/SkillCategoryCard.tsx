@@ -23,7 +23,7 @@ export function SkillCategoryCard({
     >
       <div className="mb-4 flex items-center gap-3">
         <span className="h-9 w-1 rounded-full bg-accent" aria-hidden="true" />
-        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary/10 text-primary">
+        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary/10 text-primary-text">
           <Icon size={20} strokeWidth={2} />
         </span>
       </div>

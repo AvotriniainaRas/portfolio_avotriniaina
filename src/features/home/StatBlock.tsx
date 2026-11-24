@@ -26,7 +26,7 @@ export function StatBlock() {
       </div>
 
       <p className="mt-3 text-2xl font-bold text-gray-900 dark:text-white">
-        10<span className="text-primary">+</span>
+        10<span className="text-primary-text">+</span>
       </p>
       <p className="text-xs font-medium text-gray-500 dark:text-gray-400">
         Projets réalisés — web, mobile, DevOps &amp; Cloud

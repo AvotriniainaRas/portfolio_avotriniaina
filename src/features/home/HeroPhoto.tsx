@@ -41,7 +41,7 @@ export function HeroPhoto() {
         </LocalizedLink>
         <LocalizedLink
           to="contact"
-          className="flex h-14 items-center rounded-full border-2 border-gray-300 px-7 text-base font-semibold text-gray-800 transition-colors hover:border-primary hover:text-primary dark:border-gray-700 dark:text-gray-200"
+          className="flex h-14 items-center rounded-full border-2 border-gray-300 px-7 text-base font-semibold text-gray-800 transition-colors hover:border-primary hover:text-primary-text dark:border-gray-700 dark:text-gray-200"
         >
           Me contacter
         </LocalizedLink>

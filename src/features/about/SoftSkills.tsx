@@ -17,7 +17,7 @@ export function SoftSkills() {
             transition={{ duration: 0.45, delay: index * 0.06, ease: EASE }}
             className="flex items-center gap-3 rounded-xl border border-gray-200 bg-gray-50/60 px-4 py-3 dark:border-gray-800 dark:bg-gray-900/30"
           >
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent-text">
               <Icon size={16} strokeWidth={2} />
             </span>
             <span className="text-sm font-medium text-gray-700 dark:text-gray-300">

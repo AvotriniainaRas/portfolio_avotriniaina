@@ -38,7 +38,7 @@ export function AboutPage() {
           Compétences
         </p>
         <h2 className="mb-6 text-2xl font-bold tracking-tight sm:text-3xl">
-          Une stack <span className="text-primary">complète</span>, du frontend au
+          Une stack <span className="text-primary-text">complète</span>, du frontend au
           déploiement
         </h2>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -55,7 +55,8 @@ export function AboutPage() {
           Savoir-être
         </p>
         <h2 className="mb-6 text-2xl font-bold tracking-tight sm:text-3xl">
-          Ce qui fait la <span className="text-accent">différence</span>, au-delà du code
+          Ce qui fait la <span className="text-accent-text">différence</span>, au-delà du
+          code
         </h2>
         <SoftSkills />
       </div>
@@ -67,7 +68,7 @@ export function AboutPage() {
           Parcours
         </p>
         <h2 className="mb-8 text-2xl font-bold tracking-tight sm:text-3xl">
-          De la formation aux <span className="text-primary">projets concrets</span>
+          De la formation aux <span className="text-primary-text">projets concrets</span>
         </h2>
         <Timeline />
       </div>
@@ -79,7 +80,7 @@ export function AboutPage() {
           Langues
         </p>
         <h2 className="mb-6 text-2xl font-bold tracking-tight sm:text-3xl">
-          De quoi <span className="text-accent">échanger</span> sans barrière
+          De quoi <span className="text-accent-text">échanger</span> sans barrière
         </h2>
         <div className="flex flex-col divide-y divide-gray-200 dark:divide-gray-800">
           {LANGUAGES.map((lang) => (
@@ -97,11 +98,11 @@ export function AboutPage() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.5, ease: EASE }}
-        className="rounded-3xl bg-gray-950 px-8 py-14 text-center dark:bg-black"
+        className="dark rounded-3xl bg-gray-950 px-8 py-14 text-center dark:bg-black"
       >
         <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
           Envie d&apos;en savoir plus{' '}
-          <span className="text-accent">ou de garder mon profil sous la main</span> ?
+          <span className="text-accent-text">ou de garder mon profil sous la main</span> ?
         </h2>
         <p className="mx-auto mt-3 max-w-md text-gray-400">
           Téléchargez mon CV pour retrouver mon parcours, mes expériences et mes
