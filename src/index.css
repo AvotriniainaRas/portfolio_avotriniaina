@@ -1,12 +1,119 @@
 @import 'tailwindcss';
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  --font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+/*
+ * DESIGN SYSTEM : piste « Éditorial »
+ * ------------------------------------------------------------------
+ * 1. @theme  : les jetons (couleurs, polices, ombres). Tailwind en tire des classes
+ *              (bg-surface, text-text-muted, font-display, shadow-print...).
+ * 2. .dark   : les MÊMES noms de jetons, avec les valeurs du thème sombre.
+ *              Un composant écrit « bg-surface text-text » une fois et fonctionne dans les deux thèmes,
+ *              sans multiplier les « dark: ».
+ * 3. Les anciens composants utilisent encore bg-gray-*, text-primary... : l'échelle de gris est
+ *    donc redéfinie en tons chauds, pour que tout le site adopte la nouvelle identité d'un coup.
+ */
 
-  --color-primary: #2563eb; /* bleu principal */
-  --color-primary-light: #3b82f6;
-  --color-accent: #10b981; /* vert secondaire */
+@theme {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Fraunces Variable', ui-serif, Georgia, 'Times New Roman', serif;
+
+  /* Gris chauds : du papier (100) à l'encre (950) */
+  --color-gray-50: #fbf8f2;
+  --color-gray-100: #f6f1e9;
+  --color-gray-200: #eae3d6;
+  --color-gray-300: #d9d0bf;
+  --color-gray-400: #a39a8a;
+  --color-gray-500: #6b6354;
+  --color-gray-600: #544d41;
+  --color-gray-700: #3e382f;
+  --color-gray-800: #2a2620;
+  --color-gray-900: #1c1915;
+  --color-gray-950: #14120f;
+
+  /* Rôles : ces valeurs sont celles du thème CLAIR (voir .dark plus bas pour le sombre) */
+  --color-surface: #f6f1e9; /* fond de page : papier chaud */
+  --color-surface-raised: #fbf8f2; /* cartes posées sur le papier */
+  --color-surface-sunken: #eae3d6; /* zones en retrait */
+  --color-text: #14120f; /* encre */
+  --color-text-muted: #544d41; /* 7,3:1 sur le papier */
+  --color-line: #d9d0bf; /* filets décoratifs */
+
+  --color-primary: #1e3a8a; /* remplissages (boutons) : 10,4:1 avec du blanc */
+  --color-primary-strong: #172b6b; /* survol */
+  --color-primary-text: #1e3a8a; /* texte, liens, icônes : 9,2:1 sur le papier */
+  --color-primary-light: #7c9be8; /* touches claires sur fond sombre */
+  --color-accent: #1f4d3a; /* vert : petits signaux (disponible, validé) */
+  --color-accent-text: #1f4d3a;
+
+  /* Bandeau d'encre bleutée, identique dans les deux thèmes */
+  --color-band: #101a38;
+
+  --shadow-print: 0 1px 0 rgb(20 18 15 / 0.05), 0 14px 28px -14px rgb(20 18 15 / 0.4);
+}
+
+/* Thème sombre : mêmes noms, autres valeurs */
+.dark {
+  --color-surface: #14120f;
+  --color-surface-raised: #1c1915;
+  --color-surface-sunken: #0e0c0a;
+  --color-text: #f6f1e9;
+  --color-text-muted: #bdb4a3; /* 9:1 sur l'encre */
+  --color-line: #3e382f;
+
+  --color-primary: #3b5bbf; /* 6:1 avec du blanc */
+  --color-primary-strong: #2f4da8;
+  --color-primary-text: #9db8ff; /* 9,5:1 sur l'encre */
+  --color-accent: #2f7a5a; /* 5,2:1 avec du blanc */
+  --color-accent-text: #7fcba3;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  .dark {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+  }
+
+  /* Titres en Fraunces ; text-wrap: balance évite les lignes orphelines dans les titres */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-primary) 28%, transparent);
+  }
+
+  /* Anneau de focus clavier cohérent sur TOUS les éléments interactifs, dans les deux thèmes */
+  :focus-visible {
+    outline: 2px solid var(--color-primary-text);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Surlignage « marqueur » sous le mot clé d'un titre. Reste lisible sur plusieurs lignes. */
+  .marker {
+    background-image: linear-gradient(
+      transparent 64%,
+      color-mix(in oklab, var(--color-primary-text) 26%, transparent) 64% 94%,
+      transparent 94%
+    );
+    padding-inline: 0.12em;
+    margin-inline: -0.12em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
 }
 
 @keyframes marquee {
@@ -26,11 +133,21 @@
   animation-play-state: paused;
 }
 
-/* Anneau de focus clavier cohérent sur tous les éléments interactifs */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+/*
+ * Mouvement réduit (WCAG 2.3.3) : si le système demande moins d'animations, on les neutralise.
+ * Framer Motion est géré à part par <MotionConfig reducedMotion="user"> dans main.tsx.
+ * Le défilement du bandeau de technologies est arrêté, pas accéléré : il resterait sinon figé à mi-course.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-marquee {
+    animation: none !important;
+  }
 }

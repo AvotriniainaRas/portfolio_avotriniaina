@@ -1,20 +1,23 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
+import { MotionConfig } from 'framer-motion'
 import { router } from './app/router'
 import { ThemeProvider } from './features/theme/ThemeProvider'
 
-import '@fontsource/montserrat/400.css'
-import '@fontsource/montserrat/500.css'
-import '@fontsource/montserrat/600.css'
-import '@fontsource/montserrat/700.css'
-import '@fontsource/montserrat/800.css'
+// Polices variables : un seul fichier par famille couvre toutes les graisses (le navigateur ne télécharge
+// que le sous-ensemble « latin » utile au français, grâce aux unicode-range).
+import '@fontsource-variable/inter'
+import '@fontsource-variable/fraunces/wght.css'
 import './index.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider>
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    {/* reducedMotion="user" : respecte prefers-reduced-motion pour toutes les animations Framer Motion */}
+    <MotionConfig reducedMotion="user">
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </MotionConfig>
   </StrictMode>
 )
