@@ -47,7 +47,7 @@ function RouteSeo() {
   const key = handle?.routeKey
   const { t } = useI18n()
 
-  if (!key || key === 'project') return null
+  if (!key || key === 'project' || key === 'dev') return null
   if (key === 'notFound') {
     return (
       <Seo

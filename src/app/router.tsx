@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import { createBrowserRouter, type RouteObject } from 'react-router-dom'
 import { LocaleLayout } from './LocaleLayout'
 import { LegacyRedirect, RootRedirect } from './redirects'
@@ -34,7 +35,37 @@ function pagesFor(locale: Locale): RouteObject[] {
   return pages
 }
 
+/**
+ * Page de prévisualisation du design system, disponible UNIQUEMENT en développement (npm run dev) : /design.
+ * `import.meta.env.DEV` est remplacé par `false` au build : tout ce bloc, y compris la page importée
+ * dynamiquement, est supprimé du site de production.
+ */
+const devRoutes: RouteObject[] = []
+if (import.meta.env.DEV) {
+  const DesignSystemPage = lazy(() =>
+    import('../features/design/DesignSystemPage').then((m) => ({
+      default: m.DesignSystemPage,
+    }))
+  )
+  devRoutes.push({
+    path: '/design',
+    element: <LocaleLayout locale="fr" />,
+    children: [
+      {
+        index: true,
+        element: (
+          <Suspense fallback={null}>
+            <DesignSystemPage />
+          </Suspense>
+        ),
+        handle: { routeKey: 'dev' },
+      },
+    ],
+  })
+}
+
 export const router = createBrowserRouter([
+  ...devRoutes,
   { path: '/', element: <RootRedirect /> },
 
   // /fr/... et /en/... : une arborescence complète par langue

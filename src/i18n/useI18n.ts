@@ -12,7 +12,7 @@ export function useI18n(): I18nValue {
 
 /** Clé de route attachée (via `handle`) à la page actuellement affichée. */
 export interface RouteHandle {
-  routeKey?: RouteKey | 'notFound'
+  routeKey?: RouteKey | 'notFound' | 'dev'
 }
 
 /**
@@ -27,7 +27,8 @@ export function useAlternatePath(target: Locale): string {
   const last = matches[matches.length - 1]
   const routeKey = (last?.handle as RouteHandle | undefined)?.routeKey
 
-  if (!routeKey || routeKey === 'notFound') return buildPath('home', target)
+  if (!routeKey || routeKey === 'notFound' || routeKey === 'dev')
+    return buildPath('home', target)
 
   const params = (last?.params ?? {}) as RouteParams
   return `${buildPath(routeKey, target, params)}${search}${hash}`
