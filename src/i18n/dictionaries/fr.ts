@@ -12,6 +12,16 @@ export const fr = {
     downloadCv: 'Télécharger CV',
     openMenu: 'Ouvrir le menu',
     closeMenu: 'Fermer le menu',
+    mobileMenu: 'Menu de navigation',
+    mainNavigation: 'Navigation principale',
+    skipToContent: 'Aller au contenu',
+    cta: 'Discutons de votre projet',
+  },
+  cv: {
+    groupLabel: 'Choisir la langue du CV',
+    // Chaque libellé est écrit dans SA langue : on choisit le CV sans avoir à comprendre le site.
+    options: { fr: 'CV en français', en: 'CV in English' },
+    format: 'PDF',
   },
   language: {
     groupLabel: 'Langue du site',
@@ -22,9 +32,34 @@ export const fr = {
     toDark: 'Activer le thème sombre',
   },
   footer: {
-    tagline: "Développeur Fullstack · DevOps & Cloud — Étudiant à l'EMIT Fianarantsoa.",
+    tagline: 'Développeur Fullstack & DevOps Junior',
+    availability: 'Disponible pour de nouvelles missions',
+    navTitle: 'Navigation',
+    cvTitle: 'Télécharger mon CV',
+    contactTitle: 'Me joindre',
     rights: (year: number) =>
       `© ${year} Avotriniaina Rasamimanana. Tous droits réservés.`,
+  },
+  showcase: {
+    label: 'Projets',
+    titleBefore: 'Des projets conçus pour de ',
+    titleHighlight: 'vrais besoins',
+    description:
+      'Applications web et mobiles réalisées pour des usages concrets : transport, école, événementiel, finances personnelles.',
+    carouselLabel: 'Carrousel des projets',
+    carouselRole: 'carrousel',
+    slideRole: 'diapositive',
+    slideLabel: (n: number, total: number) => `${n} sur ${total}`,
+    status: (n: number, total: number, title: string) =>
+      `Projet ${n} sur ${total} : ${title}`,
+    previous: 'Projet précédent',
+    next: 'Projet suivant',
+    goTo: (title: string) => `Afficher le projet ${title}`,
+    caseStudy: "Voir l'étude de cas",
+    viewAll: 'Voir tous les projets',
+    fallbackAlt: (title: string) =>
+      `Illustration générée de l'interface du projet ${title}`,
+    screenshotAlt: (title: string, subject: string) => `${title} : ${subject}`,
   },
   notFound: {
     code: 'Erreur 404',
