@@ -20,9 +20,7 @@ function LocaleOption({ target, active }: { target: Locale; active: boolean }) {
       // ne doit pas écraser sa préférence.
       onClick={() => storeLocale(target)}
       className={`rounded-full px-2.5 py-1 text-xs font-semibold tracking-wide uppercase transition-colors ${
-        active
-          ? 'bg-gray-900 text-white dark:bg-white dark:text-gray-900'
-          : 'text-gray-600 hover:text-primary-text dark:text-gray-300'
+        active ? 'bg-text text-surface' : 'text-text-muted hover:text-text'
       }`}
     >
       {target}
@@ -37,7 +35,7 @@ export function LanguageSwitcher() {
     <div
       role="group"
       aria-label={t.language.groupLabel}
-      className="flex items-center rounded-full border border-gray-200 p-0.5 dark:border-gray-800"
+      className="flex items-center rounded-full border border-line p-0.5"
     >
       {LOCALES.map((l) => (
         <LocaleOption key={l} target={l} active={l === locale} />

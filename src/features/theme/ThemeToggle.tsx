@@ -15,7 +15,7 @@ export function ThemeToggle() {
       type="button"
       onClick={toggleTheme}
       aria-label={isDark ? t.theme.toLight : t.theme.toDark}
-      className="relative flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+      className="relative flex h-10 w-10 items-center justify-center rounded-md text-text transition-colors hover:bg-surface-sunken"
     >
       <motion.svg
         viewBox="0 0 24 24"
@@ -41,27 +41,28 @@ export function ThemeToggle() {
         <motion.circle
           cx="12"
           cy="12"
-          className="fill-amber-500 dark:fill-slate-200"
+          className="fill-current"
           mask="url(#moon-mask)"
           animate={{ r: isDark ? 6.5 : 5 }}
           transition={{ duration: 0.5, ease: EASE }}
         />
 
         {RAY_ANGLES.map((angle) => (
-          <motion.line
-            key={angle}
-            x1="12"
-            y1="3.5"
-            x2="12"
-            y2="1.5"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            className="stroke-amber-500"
-            transform={`rotate(${angle} 12 12)`}
-            style={{ transformOrigin: '12px 12px' }}
-            animate={{ opacity: isDark ? 0 : 1, scale: isDark ? 0.4 : 1 }}
-            transition={{ duration: 0.35, ease: EASE }}
-          />
+          // Le <g> porte la rotation fixe ; Framer Motion anime la ligne seule (il écraserait un attribut transform)
+          <g key={angle} transform={`rotate(${angle} 12 12)`}>
+            <motion.line
+              x1="12"
+              y1="3.5"
+              x2="12"
+              y2="1.5"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+              className="stroke-current"
+              initial={false}
+              animate={{ opacity: isDark ? 0 : 1 }}
+              transition={{ duration: 0.35, ease: EASE }}
+            />
+          </g>
         ))}
       </motion.svg>
     </button>

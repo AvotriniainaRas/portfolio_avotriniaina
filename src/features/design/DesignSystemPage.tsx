@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { CV_FILES } from '../../config/cv'
 import avatar from '../../assets/Avotriniaina-cutout.webp'
 import { useTheme } from '../theme/useTheme'
 import { Badge } from '../../shared/ui/Badge'
@@ -197,12 +198,7 @@ export function DesignSystemPage() {
           <ButtonLink to="projects" variant="secondary" size="lg">
             Voir les projets
           </ButtonLink>
-          <ButtonAnchor
-            href="/CV_RASAMIMANANA_Avotriniaina.pdf"
-            download
-            variant="ghost"
-            size="lg"
-          >
+          <ButtonAnchor href={CV_FILES.fr} download variant="ghost" size="lg">
             Télécharger le CV
           </ButtonAnchor>
         </div>

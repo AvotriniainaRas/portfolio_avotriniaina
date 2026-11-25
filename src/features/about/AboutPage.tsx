@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Download } from 'lucide-react'
+import { CvMenu } from '../../shared/components/CvMenu'
 import { SKILL_CATEGORIES } from './data/skills'
 import { SkillCategoryCard } from './SkillCategoryCard'
 import { Timeline } from './Timeline'
@@ -108,14 +108,9 @@ export function AboutPage() {
           Téléchargez mon CV pour retrouver mon parcours, mes expériences et mes
           compétences en un coup d&apos;œil.
         </p>
-        <a
-          href="/CV_RASAMIMANANA_Avotriniaina.pdf"
-          download
-          className="mt-6 inline-flex h-12 items-center gap-2 rounded-full bg-accent px-6 text-sm font-semibold text-white shadow-lg transition-transform hover:scale-[1.03]"
-        >
-          <Download size={16} strokeWidth={2} />
-          Télécharger mon CV
-        </a>
+        <div className="mx-auto mt-6 max-w-md">
+          <CvMenu variant="inline" />
+        </div>
       </motion.div>
     </section>
   )
