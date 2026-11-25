@@ -14,6 +14,7 @@ export function SectionHeading({
   description,
   as: Tag = 'h2',
   align = 'left',
+  wide = false,
 }: {
   id?: string
   index?: string
@@ -22,11 +23,13 @@ export function SectionHeading({
   description?: ReactNode
   as?: 'h1' | 'h2' | 'h3'
   align?: 'left' | 'center'
+  /** Pas de largeur maximale : le titre et la description ne passent à la ligne que s'ils n'ont vraiment plus de place. */
+  wide?: boolean
 }) {
   const centered = align === 'center'
 
   return (
-    <header className={cn('max-w-3xl', centered && 'mx-auto text-center')}>
+    <header className={cn(!wide && 'max-w-3xl', centered && 'mx-auto text-center')}>
       {(index || label) && (
         <p
           className={cn(
@@ -43,7 +46,9 @@ export function SectionHeading({
             </span>
           )}
           {index && label && <span aria-hidden="true" className="h-px w-10 bg-line" />}
-          {label && <span className="font-medium">{label}</span>}
+          {label && (
+            <span className="font-display text-xl font-semibold text-text">{label}</span>
+          )}
         </p>
       )}
       <Tag
@@ -53,7 +58,9 @@ export function SectionHeading({
         {title}
       </Tag>
       {description && (
-        <p className="mt-5 max-w-2xl text-lg text-text-muted">{description}</p>
+        <p className={cn('mt-5 text-lg text-text-muted', !wide && 'max-w-2xl')}>
+          {description}
+        </p>
       )}
     </header>
   )

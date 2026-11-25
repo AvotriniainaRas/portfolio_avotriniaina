@@ -1,6 +1,6 @@
 import { Hero } from './Hero'
 import { StackMarquee } from './StackMarquee'
-import { ProjectsPreview } from './ProjectsPreview'
+import { ShowcaseSection } from '../showcase/ShowcaseSection'
 import { WhyHireMe } from './WhyHireMe'
 // import { AboutPreview } from './AboutPreview'
 import { FinalCta } from '../../shared/components/FinalCta'
@@ -10,7 +10,7 @@ export function HomePage() {
     <>
       <Hero />
       <StackMarquee />
-      <ProjectsPreview />
+      <ShowcaseSection />
       <WhyHireMe />
       {/* <AboutPreview /> */}
       <FinalCta />
